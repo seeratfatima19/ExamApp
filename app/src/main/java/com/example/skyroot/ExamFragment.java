@@ -14,7 +14,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-public class ExamFragment extends Fragment {
+import java.util.ArrayList;
+import java.util.List;
+
+    public class ExamFragment extends Fragment {
 
 
     AppCompatButton endButton;
@@ -23,8 +26,10 @@ public class ExamFragment extends Fragment {
     TextView textView;
     String [] skyLetter = {"d","h","l","k","t","b","f"};
     String [] grassLetter = {"a","c","e","i","m","n","o","r","s","u","v","w","x","z"};
+
     String [] rootLetter = {"g","j","p","q","y"};
-    String[] answers= new String[5];
+    List<String> answers= new ArrayList<String>();
+    List<String> checked= new ArrayList<String>();
     static String category="";
     int correctCount=0;
     public ExamFragment() {
@@ -53,6 +58,12 @@ public class ExamFragment extends Fragment {
             public void onClick(View v) {
                 if(category.equals("Sky Letter")){
                     correctCount++;
+                    checked.add("Correct");
+                    answers.add("Sky Letter");
+                }
+                else{
+                    checked.add("Wrong");
+                    answers.add("Sky Letter");
                 }
 
                 new Handler().postDelayed(new Runnable() {
@@ -61,7 +72,7 @@ public class ExamFragment extends Fragment {
                         String question =generateLetter();
                         textView.setText(question);
                     }
-                }, 2000);
+                }, 1000);
             }
         });
 
@@ -70,6 +81,12 @@ public class ExamFragment extends Fragment {
             public void onClick(View v) {
                 if(category.equals("Grass Letter")){
                     correctCount++;
+                    checked.add("Correct");
+                    answers.add("Grass Letter");
+                }
+                else {
+                    checked.add("Wrong");
+                    answers.add("Grass Letter");
                 }
 
                 new Handler().postDelayed(new Runnable() {
@@ -78,7 +95,7 @@ public class ExamFragment extends Fragment {
                         String question =generateLetter();
                         textView.setText(question);
                     }
-                }, 2000);
+                }, 1000);
             }
         });
 
@@ -87,6 +104,13 @@ public class ExamFragment extends Fragment {
             public void onClick(View v) {
                 if(category.equals("Root Letter")){
                     correctCount++;
+                    checked.add("Correct");
+                    answers.add("Root Letter");
+                }
+                else{
+                    checked.add("Wrong");
+                    answers.add("Root Letter");
+
                 }
 
                 new Handler().postDelayed(new Runnable() {
@@ -95,7 +119,7 @@ public class ExamFragment extends Fragment {
                         String question =generateLetter();
                         textView.setText(question);
                     }
-                }, 2000);
+                }, 1000);
             }
         });
 
@@ -105,40 +129,6 @@ public class ExamFragment extends Fragment {
                 System.out.println("correct count: "+correctCount);
             }
         });
-
-        /*
-        for(int i=0;i<5;i++){
-
-            String question =generateLetter();
-            textView.setText(question);
-            String answer = "";
-
-            System.out.println("in loop");
-
-                if(skybtn.isChecked()){
-                System.out.println("sky letter checked");
-                if(category.equals("Sky Letter")){
-                    correctCount++;
-                }
-            }
-            else if(rootBtn.isChecked()){
-                System.out.println("root letter checked");
-                if(category.equals("Root Letter")){
-                    correctCount++;
-                }
-            }
-            else if(grassBtn.isChecked()){
-                System.out.println("grass letter checked");
-                if (category.equals("Grass Letter")) {
-                    correctCount++;
-                }
-            }
-
-            System.out.println("correct count: "+correctCount);
-
-       }
-
-*/
         return view;
     }
 
