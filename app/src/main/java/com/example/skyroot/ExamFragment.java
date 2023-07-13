@@ -63,6 +63,7 @@ import java.util.List;
         skybtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println("in onclick sky");
                 if(category.equals("Sky Letter")){
                     correctCount++;
                     checked.add("Correct");
@@ -86,6 +87,7 @@ import java.util.List;
         grassBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println("in onclick grass");
                 if(category.equals("Grass Letter")){
                     correctCount++;
                     checked.add("Correct");
@@ -99,6 +101,7 @@ import java.util.List;
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
+
                         String question =generateLetter();
                         textView.setText(question);
                     }
@@ -109,6 +112,7 @@ import java.util.List;
         rootBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println("in onclick root");
                 if(category.equals("Root Letter")){
                     correctCount++;
                     checked.add("Correct");

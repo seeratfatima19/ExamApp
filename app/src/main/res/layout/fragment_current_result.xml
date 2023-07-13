@@ -6,9 +6,16 @@
     tools:context=".CurrentResultFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!--<TextView
+        android:id="@+id/dataDisplay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="current result fragment" />
+        android:text="current result fragment" />-->
+
+    <ListView
+        android:id="@+id/listViewCurrent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 
 </FrameLayout>
