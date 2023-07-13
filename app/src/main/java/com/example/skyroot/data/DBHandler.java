@@ -55,11 +55,11 @@ public class DBHandler extends SQLiteOpenHelper {
         return i;
     }
 
-    public List<ResultDB> returnDb()
+    public ArrayList<ResultDB> returnDb()
     {
         String selectQuery = "SELECT  * FROM " + TABLE_NAME1;
 
-        List<ResultDB> resultDBList = new ArrayList<ResultDB>();
+        ArrayList<ResultDB> resultDBList = new ArrayList<ResultDB>();
         SQLiteDatabase db = this.getReadableDatabase();
         try {
 
