@@ -80,7 +80,7 @@ public class ResultAdapter implements ListAdapter {
             TextView resultCurrent=convertView.findViewById(R.id.text2);
 
             answerCurrent.setText(result.getDate());
-            resultCurrent.setText(result.getResult());
+            resultCurrent.setText(String.valueOf(result.getResult()));
         }
         return convertView;
     }

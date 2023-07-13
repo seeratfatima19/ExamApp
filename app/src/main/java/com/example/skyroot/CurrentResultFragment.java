@@ -37,9 +37,12 @@ public class CurrentResultFragment extends Fragment {
                 answer = bundle.getStringArrayList("answers");
 
 
+
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_current_result, container, false);
         //textView= (TextView)view.findViewById(R.id.dataDisplay);
+        textView= (TextView)view.findViewById(R.id.currentCount);
+        textView.setText("Result: "+ bundle.getInt("correctCount"));
         listView= (ListView)view.findViewById(R.id.listViewCurrent);
         ArrayList<Answer> answerList = new ArrayList<>();
        for(int i = 0; i < answer.size(); i++) {
